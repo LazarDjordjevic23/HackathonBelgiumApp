@@ -1,0 +1,18 @@
+.tab-picker {
+  position: relative;
+
+  .toggle-thumb {
+    position: absolute;
+    min-width: 98px !important;
+    min-height: 32px;
+    // z-index: 1;
+    transition: transform 0.2s ease-in-out;
+
+    //   &.dark {
+    //     transform: translate(100%, -50%);
+    //   }
+    //   &.active {
+    //     background-color: var(--neutral-200);
+    //   }
+  }
+}

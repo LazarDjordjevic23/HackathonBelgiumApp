@@ -1,0 +1,16 @@
+@keyframes slide-down {
+  from {
+    right: -20%;
+  }
+  to {
+    right: 3%;
+  }
+}
+
+.notification-wrapper {
+  animation: slide-down 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}

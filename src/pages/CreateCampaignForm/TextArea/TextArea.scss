@@ -1,0 +1,46 @@
+.textarea-wrapper {
+  label {
+    color: var(--color-text-base);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  textarea {
+    color: var(--color-text-base);
+    transition: all 150ms ease-in-out;
+    width: 100%;
+    display: block;
+    padding: 8px 16px;
+    border-radius: 12px;
+    outline: none;
+    margin-top: 8px;
+    background-color: transparent;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    min-height: 300px;
+    resize: none;
+    // overflow: hidden;
+    border: 1px solid var(--border-color);
+    &:hover {
+      //   border: 1px solid var(--neutral-500);
+    }
+    &::placeholder {
+      color: var(--color-text-muted);
+    }
+    &.has-error {
+      border-color: #f04438 !important;
+    }
+    &:focus {
+      border: 1px solid #0871fa !important;
+    }
+  }
+  .error-message {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #f04438 !important;
+  }
+}

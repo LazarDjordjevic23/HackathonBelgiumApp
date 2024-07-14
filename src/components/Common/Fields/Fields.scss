@@ -1,0 +1,99 @@
+.custom-field-wrapper {
+  position: relative;
+  & label {
+    display: block;
+    text-align: left;
+    // color: var(--color-main);
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  & input,
+  select,
+  textarea {
+    height: 42px;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    &::placeholder {
+      color: #fff;
+      opacity: 0.7;
+    }
+  }
+  & .green {
+    color: green;
+  }
+  & .label-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  & .mini-field {
+    max-width: 100px;
+    text-align: center;
+    &::placeholder {
+      text-align: center;
+      color: #fff !important;
+    }
+  }
+  & .field-inline-hint {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(0%, -50%);
+    font-weight: bold;
+  }
+  & .field-hint {
+    position: absolute;
+    right: 0px;
+    top: 105%;
+  }
+  & .field-helper-text {
+    position: absolute;
+    left: 0px;
+    top: 105%;
+    color: red;
+  }
+
+  & .field-container {
+    position: relative;
+
+    & textarea {
+      width: 98% !important;
+    }
+  }
+  & .bottom-hint {
+    color: #fff;
+    text-align: left;
+    margin-top: 0.5rem;
+    font-size: 12px;
+    opacity: 0.7;
+  }
+
+  .disabled-field {
+  }
+
+  .custom-checkbox {
+    &.green-border {
+      border-color: gray !important;
+    }
+    & .checked {
+      background-color: gray !important;
+    }
+  }
+}
+.field-container {
+  .field-error {
+    border: red 0.3px solid !important;
+    border-radius: 5px;
+  }
+  .field-error-text {
+    color: red !important;
+    text-align: left !important;
+  }
+}
+
+textarea {
+  width: 100% !important;
+}
