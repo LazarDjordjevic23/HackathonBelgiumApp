@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('./styles/fonts.scss');
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cool-font {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+body {
+  background-image: url('./assets/images/lazar0572_i_need_a_background_for_an_crypto_app_it_has_to_have__41f63e3f-5299-4183-8d50-12ae41b45c11.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#root {
+  overflow: hidden;
+  min-height: 100vh;
+  height: fit-content;
+  transition: all 2s ease-in-out;
+  scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
+  scrollbar-width: 1px !important;
+
+  --success-text: rgb(30, 70, 32);
+  --success-bg: rgb(237, 247, 237);
+
+  --error-text: rgb(95, 33, 32);
+  --error-bg: rgb(253, 237, 237);
+
+  --warning-text: rgb(255, 226, 183);
+  --warning-bg: rgb(25, 18, 7);
+
+  --info-text: rgb(1, 67, 97);
+  --info-bg: rgb(229, 246, 253);
+
+  color: var(--color-text-base);
+}
+
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+  .transition-150 {
+    @apply transition-all ease-in-out delay-150;
+  }
+  .transition-50 {
+    @apply transition-all ease-in-out delay-[50];
+  }
+  .border-default {
+    @apply border border-solid border-[var(--border-color)];
+  }
+  .border-default-y {
+    @apply border-y border-solid border-[var(--border-color)];
+  }
+  .border-default-x {
+    @apply border-x border-solid border-[var(--border-color)];
+  }
+  .border-r-default {
+    @apply border-r border-solid border-[var(--border-color)];
+  }
+  .border-b-default {
+    @apply border-b border-solid border-[var(--border-color)];
+  }
+  .gredient-text {
+    @apply bg-button-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .blured-gray-bg {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(25px);
+  }
+}
+body {
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+[data-theme='light'] {
+  /* --rk-colors-connectButtonBackground:#000;
+  --rk-colors-connectButtonText:#fff; */
+  --app-bg: #f4f4f4;
+  --color-text-base: #333;
+  --color-text-muted: #666;
+  --color-text-inverted: #fff;
+  --color-primary: #1a73e8;
+  --color-primary-hover: #155ab6;
+  --border-color: #ffffff4c;
+  --campaign-container-bg: #16393b;
+}
+
+[data-theme='dark'] {
+  --Content-Tertiary: #fff;
+  --Content-Primary: #1f2937;
+  --Content-Secondary: #6b7280;
+
+  --Background-Secondary: #f9fafb;
+  --Border-Primary: #e5e7eb;
+  --Border-Secondary: #9e0144;
+
+  --error: #ef4444;
+  --success: #22c55e;
+
+  --Content-Button-link-primary: #fff;
+
+  --Background-Primary: #030712;
+
+  --Background-Button-primary: #9e0144;
+  --Background-Button-secondary: #fef2f2;
+
+  --Content-Button-link-secondary: #9e0144;
+
+  --Button-Box-Shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+
+  --brand-old-gold: #e5ae48;
+
+  --Weight-400: 400;
+  --Weight-500: 500;
+  --Weight-600: 600;
+  --Weight-700: 700;
+
+  --Line-height-4: 16px;
+  --Line-height-5: 20px;
+  --Line-height-12: 48px;
+
+  --Letter-spacing-Normal: 0px;
+  --Letter-spacing-Small: 1px;
+  --Letter-spacing-Large: -1px;
+}
+
+// * {
+//   &::-webkit-scrollbar {
+//     width: 6px !important;
+//     background-color: #fff !important;
+//   }
+
+//   &::-webkit-scrollbar-track {
+//     border: 1px solid #e6e7e9 !important;
+//     border-radius: 10px !important;
+//   }
+
+//   &::-webkit-scrollbar-thumb {
+//     background: #c8c9cb !important;
+//     border-radius: 60px !important;
+//   }
+
+//   &::-webkit-scrollbar-thumb:hover {
+//     background: #c8c9cb !important;
+//   }
+// }
+
+.campaign-container {
+  &::-webkit-scrollbar-track {
+    border: 1px solid #e6e7e9 !important;
+    border-radius: 10px !important;
+  }
+}

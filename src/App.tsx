@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from 'react';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { useAccount } from 'wagmi';
+import AppRouter from './router';
+import { useThemeStore } from './stores/theme';
+import { KindeProvider } from '@kinde-oss/kinde-auth-react';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { connector } = useAccount();
+  const { theme } = useThemeStore();
+
+  useEffect(() => {
+    if (!connector?.getProvider) return;
+
+    connector?.getProvider().then((provider: any) => {
+      if (!provider || !(provider as any)?.request) return;
+      provider
+        .request({ method: 'eth_accounts' })
+        .then((res: any) => {})
+        .catch((err: any) => {});
+    });
+  }, [connector && 'getProvider' in connector]);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div data-theme={theme} className="">
+      <KindeProvider
+        clientId={import.meta.env.VITE_KINDE_CLIENT_ID}
+        domain={import.meta.env.VITE_KINDE_DOMAIN}
+        redirectUri={window.location.origin}
+        logoutUri={window.location.origin}
+      >
+        <AppRouter />
+      </KindeProvider>
+    </div>
+  );
 }
 
-export default App
+export default App;
