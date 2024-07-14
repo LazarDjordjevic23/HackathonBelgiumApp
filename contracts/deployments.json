@@ -1,0 +1,9 @@
+{
+    "rootstock": {
+        "ERC20": "0x499d3337A81f914bE8cFbF8161898E76e46972b5",
+        "FlashLoan": "0x342dD587b53De5708d458823D686990C89B6d783",
+        "Arbitrage": "0x03947e5e28eeCe6F9F85E43b4ffF102cBDeB57D8",
+        "VestingFarm": "0x2A5C4D0a750334bBd3D7483DEB9E6E6DEf5389bb",
+        "LinearVestingFarm": "0x982187a77bEEeb8EB2cDcf20939a49e7FfA77A24"
+    }
+}
